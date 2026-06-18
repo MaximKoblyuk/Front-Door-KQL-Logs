@@ -2,7 +2,6 @@ let ip = "1.2.3.4"; // replace with client IP
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.CDN"
     and Category == "FrontDoorAccessLog"
-| where requestUri_s contains "URL......."
 | where clientIp_s == ip
 | project TimeGenerated,
     Method  = httpMethod_s,
