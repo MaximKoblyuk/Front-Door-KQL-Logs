@@ -1,7 +1,6 @@
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.CDN"
     and Category == "FrontDoorAccessLog"
-| where requestUri_s contains "redberry.app.euccz.org"
 | extend Environment = case(
     requestUri_s contains "uat.",  "UAT",
     requestUri_s contains "test.", "TEST",
