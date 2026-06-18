@@ -1,7 +1,6 @@
 AzureDiagnostics
 | where ResourceProvider == "MICROSOFT.CDN"
     and Category == "FrontDoorWebApplicationFirewallLog"
-| where requestUri_s contains "redberry.app.euccz.org"
 | where action_s == "Block"
 | project TimeGenerated,
     ClientIP   = clientIP_s,
